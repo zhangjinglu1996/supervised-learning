@@ -1,1 +1,26 @@
 # supervised-learning
+
+#1.Estimate a full logistic regression model with all the predictors.
+#2. Estimate a new logistic multiple regression model with all the relevant predictors of point ，and compare the coefficient estimates of the two models.
+#3. Estimate the test error of last model via 5-fold cross validation.
+
+library(ElemStatLearn)
+setwd("D:/supervised leaning/")
+
+#导入数据集，注意括号里面要有引号
+load("SAheart.RData")
+head(SAheart)
+attach(SAheart)
+
+#Estimate a full logistic regression model with all the predictors.
+pairs (SAheart[,-10],col=ifelse(chd==1,"coral","blue"))
+
+#glm函数用于做full logistic regression model ,语法：glm(formula, family = binomial, data，...)
+out.log <- glm(chd~.,family = binomial,data=SAheart)
+summary(out.log)
+
+#删除不显著的变量，并比较
+out.log.vs<-glm(chd~tobacco+ldl+famhist+typea+age,data=SAheart,family = "binomial")
+summary(out.log.vs)
+
+#结果是out.log.vs模型有更小的AIC，通常，AIC越小越好
