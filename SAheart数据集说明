@@ -1,0 +1,11 @@
+The dataset contains 462 observations on the following 10 variables.
+sbp systolic blood pressure
+tobacco cumulative tobacco (kg)
+ldl low density lipoprotein cholesterol
+adiposity a numeric vector
+famhist family history of heart disease, a factor with levels Absent/Present
+typea type-A behavior, a measure of psychosocial stress, as measured by the self-administered Bortner Scale.
+obesity a numeric vector
+alcohol current alcohol consumption
+age age at onset
+chd response, coronary heart disease
